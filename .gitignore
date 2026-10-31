@@ -16,3 +16,6 @@
 # MATLAB autosaves
 slprj/
 *.asv
+
+# Archives (GitHub provides Download ZIP)
+*.zip
