@@ -1,0 +1,18 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.fls
+*.fdb_latexmk
+*.blg
+*.bbl
+
+# macOS
+.DS_Store
+
+# MATLAB autosaves
+slprj/
+*.asv
