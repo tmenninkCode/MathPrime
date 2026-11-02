@@ -10,10 +10,19 @@ and drawing each interval as a centred horizontal segment produces a fan of vert
 $$\frac{x^2}{2} - \frac{x}{2} - i = P$$
 
 so since $\frac{x^2}{2} - \frac{x}{2} = T(x-1)$, a row is nothing but the triangular
-number $T(x-1)$ minus the column index $i$. A column is empty exactly when
-$P = (x-k)(x+k-1)/2$ at $i = k(k-1)/2$, i.e. at triangular $i$ — which is why the
-empty columns are at 3, 6, 10, 15, 21, … and, because triangular numbers are
-non-negative, why they appear on one side only.
+number $T(x-1)$ minus the column index $i$. A column can only be empty at a
+triangular index $i = k(k-1)/2$, where the row value factors as
+$P = (x-k)(x+k-1)/2$; for $x \ge k+3$ both factors exceed 1, so every such row is
+composite. The only primes a triangular column can hold sit in its two lowest
+rows: $x = k+1$ gives $P = k$ and $x = k+2$ gives $P = 2k+1$. A triangular column
+is therefore prime-free exactly when $k$ and $2k+1$ are both composite — so
+$i = 6, 45, 66, 120, \dots$ are empty, while $i = 3, 10, 15, 21, 28, \dots$ are not
+($k$ or $2k+1$ prime there).
+
+The mirrored half behaves differently. For $i < 0$ the row value is
+$T(x-1) + |i|$, a *sum*, so nothing forces a factorisation and no column is
+prime-free. This asymmetry is structural, not visual: it follows from triangular
+numbers being non-negative.
 
 The investigation started from the classical prime arrangements — the Klauber
 triangle and the Ulam spiral — and from arranging primes along an Archimedes
@@ -49,10 +58,24 @@ abstract also promises a discussion of $\pi(x)$ that the text does not contain.
 Two corrections a reader should apply to the 2023 text: the lemma in §2 is false
 as stated (it omits the case $x-k \le 2$), and the figure names in the `.tex` use
 the wrong case for Linux builds. The correct statement is: for $i = k(k-1)/2$ and
-$x \ge k+3$, $P$ is composite; the only primes in a triangular column are
-$(i{=}0, x{=}3, P{=}3)$ and $(i{=}1, x{=}4, P{=}5)$. Verified exactly against a
-sieve for $x \le 20\,000$ ($|i| \le 4\,000$): 87 empty columns, all non-negative
-and all triangular.
+$x \ge k+3$, $P$ is composite, with primes possible only at $x = k+1$ ($P = k$)
+and $x = k+2$ ($P = 2k+1$).
+
+Verified against a sieve for $x \le 20\,000$ ($|i| \le 4\,000$):
+
+| Fact | Result |
+| --- | --- |
+| Prime-free columns | 35, **all** with $i \ge 0$, **all** triangular |
+| Triangular columns in range | 58 — the other 23 contain a prime in their bottom rows |
+| Rule "prime-free $\iff$ $k$ and $2k+1$ both composite" | 0 mismatches |
+| Columns with $i < 0$ (mirrored half) | 4 000 tested, **all 4 000 contain a prime** |
+
+So the mirrored half has no prime-free columns whatsoever. The 2026 publication
+`giammirove/triangular-prime-pyramid` states the composite-row result for its own
+pyramid, but that pyramid has no mirrored half — its rows run $r \ge 0$ only — so
+the one-sidedness never arises there. It is an addition relative to that text, and
+an elementary one: a difference of two triangular numbers needs non-negative
+indices, a sum does not.
 
 ## Contents
 
