@@ -1,6 +1,7 @@
 # Predictable Pattern of Non-primes
 
-An illustration rather than a result: how grouping the primes into intervals of the form
+A hobby project, not a publication — an illustration rather than a result: how
+grouping the primes into intervals of the form
 
 $$\frac{(x-1)^2}{2} < P < \frac{x^2}{2}$$
 
@@ -104,7 +105,7 @@ Figures are referenced by relative path, so build from the repository root.
 Written between 22 September and 5 October 2023; published here unmodified apart
 from repository housekeeping. Per-file original modification timestamps are
 recorded in [`MANIFEST.md`](MANIFEST.md), and the 2023 content is committed with
-its original date. No peer review.
+its original date. Written for curiosity, never submitted anywhere.
 
 ## Author
 
