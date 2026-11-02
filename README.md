@@ -58,7 +58,8 @@ abstract also promises a discussion of $\pi(x)$ that the text does not contain.
 
 Two corrections a reader should apply to the 2023 text: the lemma in §2 is false
 as stated (it omits the case $x-k \le 2$), and the figure names in the `.tex` use
-the wrong case for Linux builds. The correct statement is: for $i = k(k-1)/2$ and
+the wrong case for Linux builds. **[`ERRATA.md`](ERRATA.md) lists all six
+corrections** for readers who only look at the compiled PDF. The correct statement is: for $i = k(k-1)/2$ and
 $x \ge k+3$, $P$ is composite, with primes possible only at $x = k+1$ ($P = k$)
 and $x = k+2$ ($P = 2k+1$).
 
